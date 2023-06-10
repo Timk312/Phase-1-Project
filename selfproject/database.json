@@ -1,14 +1,17 @@
 [
     {
         "food": "life-cereal",
-        "calories": 300
+        "calories": 300,
+        "serving size": 1
     }
     {
         "food": "eggsalad-sandwhich",
-        "calories": 600
+        "calories": 600,
+        "serving size": 2
     }
     {
         "food": "BK whopper w/ cheese",
-        "calories": 790
+        "calories": 790,
+        "serving size": 1
     }
 ]
