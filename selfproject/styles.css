@@ -6,6 +6,37 @@ body{
 overflow-y: hidden;
 }
 
+.button{
+    height: 50px;
+    width: 50px;
+}
+.button2{
+    height: 50px;
+    width: 150px;
+}
+#input-calroies-span{
+    position: relative;
+    left: 4em;
+}
+#submitMeal{
+    position: relative;
+    left: 14em;
+}
+#tooltip{
+    position: relative;
+    bottom:39em;
+    left:27.6em;
+}
+#Summary{
+   text-align: center;
+   font-size:2em
+}
+
+#mealToDatabase{
+    margin: auto;
+    text-align: center;
+}
+
 #box {
     height: 100px;
     width: 1000px;

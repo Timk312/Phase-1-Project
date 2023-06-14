@@ -10,26 +10,56 @@
 </head>
 <body>
     <header>
-        <h1 class="header">Fitness Tracker
-        </h1>
+        <h1 class="header">Calorie Tracker</h1>
         <hr>
     </header>
    <div id="box">
-
+        <form>
+            <label for = "Height">Height: </label>
+            <input type= "text" id="Height" name = "Height"><br><br><br>
+            <label for = "Weight">Weight: </label>
+            <input type= "text" id="Weight" name = "Weight">
+        </form>
    </div>
    <div id="box2">
-        
+            <label for = "Height2">Height: </label>
+            <input type= "text" id="Height2" name = "Height2"><br><br>
+            <label for = "Weight2">Weight: </label>
+            <input type= "text" id="Weight2" name = "Weight2"><br><br>
+            <label for = "BMI">BMI: </label>
+            <input type= "text" id="BMI" name = "BMI">
    </div>
    <div id="box3">
+            <label for = "Meal">Meal: </label>
+            <input type= "text" id="Meal" name = "Meal"><br><br>
+            <h2>Energy Level:</h2>
+            <button class="button" id="button1" type="button">1</button>
+            <button class="button" id="button2" type="button">2</button>
+            <button class="button" id="button3" type="button">3</button>
+            <button class="button" id="button4" type="button">4</button>
+            <button class="button" id="button5" type="button">5</button>
     <div id="box5">
-        
+            <h3 id="mealToDatabase">Add meal to the database</h3>
+            <label for = "Input-Meal">Input Meal: </label>
+            <input type= "text" id="Input-Meal" name = "Input-Meal"><br><br><br>
+            <button class="button2" id="buttonMeal" type="button">Meal</button>
+            <button class="button2" id="buttonSnack" type="button">Snack</button>
+        <span id="input-calroies-span">
+            <label for = "Input-Calories">Input Calories: </label>
+            <input type= "text" id="Input-Calories" name = "IInput-Calories">
+        </span>
+            <button id="submitMeal" class="button2" id="submitMeal" type="button">Submit Meal</button>
     </div>    
    </div>
    <div id="box4">
-
+            <h2 id="Summary">Summary</h2>
+            <h3 style="display: inline">Total Calories : </h3><h3 style="display: inline">INFO</h3><br><br><br><br><br>
+            <h3 style="display: inline">Average Energy : </h3><h3 style="display: inline">INFO</h3><br><br><br><br><br>
+            <h3 style="display: inline">Calories Goal : </h3><h3 style="display: inline">INFO</h3>
    </div>
    <button id="btn1" type="button">Relaxed</button>
    <button id="btn2" type="button">Strict</button>
+   <h2 id="tooltip">Use the arrow left and right keys to adjust your goals</h2>
    
    
 </body>
