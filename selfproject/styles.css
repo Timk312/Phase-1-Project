@@ -31,7 +31,9 @@ overflow-y: hidden;
    text-align: center;
    font-size:2em
 }
-
+#BMI{
+    margin: auto;
+}
 #mealToDatabase{
     margin: auto;
     text-align: center;
