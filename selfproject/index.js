@@ -24,3 +24,13 @@ function submitInfo(){
 //calls submitInfo() once button is clicked
 submitInfobtn.addEventListener("click",submitInfo)
 
+//box 3 .find() meal within database, else askes to add the meal / select energy level
+
+fetch("database.json")
+.then(res=>res.json())
+.then(data=>showInfo(data));
+
+function showInfo(data){
+    console.log(data);
+}
+

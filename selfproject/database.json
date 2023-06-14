@@ -2,16 +2,21 @@
     {
         "food": "life-cereal",
         "calories": 300,
-        "serving size": 1
-    }
+        "type": "meal"
+    },
     {
         "food": "eggsalad-sandwhich",
         "calories": 600,
-        "serving size": 2
-    }
+        "type": "meal"
+    },
     {
         "food": "BK whopper w/ cheese",
         "calories": 790,
-        "serving size": 1
+        "type": "meal"
+    },
+    {
+        "food": "buttered toast",
+        "calories": 200,
+        "type": "snack"
     }
 ]
