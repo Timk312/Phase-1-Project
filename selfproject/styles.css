@@ -19,6 +19,10 @@ overflow-x: hidden;
     position: relative;
     left: 4em;
 }
+#submitInfo{
+    position: relative;
+    left: 45em;
+}
 #submitMeal{
     position: relative;
     left: 14em;
