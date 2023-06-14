@@ -6,7 +6,16 @@ body{
 overflow-y: hidden;
 overflow-x: hidden;
 }
-
+#heightInfo{
+position: absolute;
+left: 16em;
+top: 5.5em;
+}
+#weightInfo{
+    position: absolute;
+    left: 16em;
+    top: 8.7em;
+    }
 .button{
     height: 50px;
     width: 50px;

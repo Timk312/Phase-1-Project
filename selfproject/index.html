@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href = "styles.css" rel="stylesheet">
-    <script src = "index.js" defer></script>
+    <script src = "/selfproject/index.js" defer></script>
 </head>
 <body>
     <header>
@@ -14,13 +14,16 @@
         <hr>
     </header>
    <div id="box">
+    <h2 id="heightInfo">HEIGHT</h2>
+    <h2 id="weightInfo">WEIGHT</h2>
         <form>
             <label for = "Height">Your Height: </label>
-            <input type= "text" id="Height" name = "Height"><br><br><br>
+            <input type= "text" id="myHeight" name = "Height"><br><br><br>
             <label for = "Weight">Your Weight: </label>
-            <input type= "text" id="Weight" name = "Weight">
+            <input type= "text" id="myWeight" name = "Weight">
             <button id="submitInfo" class="button2" type="button">Submit Info</button>
         </form>
+        
    </div>
    <div id="box2">
             <h2 id="BMI" style="display: inline">BMI :</h2><h3 id="bmiOutput" style="display: inline">INFO</h3>
