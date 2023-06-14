@@ -11,6 +11,16 @@ position: absolute;
 left: 16em;
 top: 5.5em;
 }
+#heightOutput{
+position: absolute;
+left: 30em;
+top: 7.3em;
+}
+#weightOutput{
+position: absolute;
+left: 30em;
+top: 11.5em;
+}
 #weightInfo{
     position: absolute;
     left: 16em;

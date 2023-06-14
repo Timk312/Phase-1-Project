@@ -1,16 +1,21 @@
-//box 1 input height and weight and set that value to myHeight/myWeight variables
+//box 1 and 2 input height and weight and set that value to myHeight/myWeight variables / update bmi
 
 let myHeight= document.getElementById('myHeight')
 let myWeight= document.getElementById('myWeight')
 const submitInfobtn= document.getElementById('submitInfo')
-let heightInfo=document.getElementById('heightInfo')
-let weightInfo=document.getElementById('weightInfo')
+let heightOutput=document.getElementById('heightOutput')
+let weightOutputo=document.getElementById('weightOutput')
+let myBMI=document.getElementById('bmiOutput')
+let bmi=0
 function submitInfo(){
 
-    heightInfo.innerHTML= "Height :" + myHeight.value 
-    weightInfo.innerHTML= "Weight :" + myWeight.value +"lbs"
-    myHeight=heightInfo.innerHTML
-    myWeight=weightInfo.innerHTML
+    heightOutput.innerHTML=myHeight.value 
+    weightOutput.innerHTML= myWeight.value
+    myHeight=parseInt(heightOutput.innerHTML)
+    myWeight=parseInt(weightOutput.innerHTML)
+    bmi=myWeight+myHeight
+    myBMI.innerHTML=bmi
     
 }
 submitInfobtn.addEventListener("click",submitInfo)
+
