@@ -8,6 +8,7 @@ let myBMI=document.getElementById('bmiOutput')
 let bmi=0
 let meal=document.getElementById("Meal")
 let calorieOutput=document.getElementById("calorieOutput")
+let energyOutput=document.getElementById("energyOutput")
 let currentCalories=0
 let currentEnergy=0
 let amountEnergy=0
@@ -75,43 +76,41 @@ button4.addEventListener("click",enterEnergy4)
 button5.addEventListener("click",enterEnergy5)
 
 function enterEnergy1(){
+    //makes current selected = green and others =white
     button2.style.backgroundColor='white',button3.style.backgroundColor='white',button4.style.backgroundColor='white',button5.style.backgroundColor='white'
     button1.style.backgroundColor='green'
+    //adds selected energy level to currentEnergy / keeps count of how many times u pressed a button
     currentEnergy+=1
     amountEnergy+=1
-    console.log(currentEnergy)
-    console.log(amountEnergy)
+    //finds the average energy and displays it
+    energyOutput.innerHTML=currentEnergy/amountEnergy
 }
 function enterEnergy2(){
     button1.style.backgroundColor='white',button3.style.backgroundColor='white',button4.style.backgroundColor='white',button5.style.backgroundColor='white'
     button2.style.backgroundColor='green'
     currentEnergy+=2
     amountEnergy+=1
-    console.log(currentEnergy)
-    console.log(amountEnergy)
+    energyOutput.innerHTML=currentEnergy/amountEnergy
 }
 function enterEnergy3(){
     button2.style.backgroundColor='white',button3.style.backgroundColor='white',button4.style.backgroundColor='white',button1.style.backgroundColor='white'
     button3.style.backgroundColor='green'
     currentEnergy+=3
     amountEnergy+=1
-    console.log(currentEnergy)
-    console.log(amountEnergy)
+    energyOutput.innerHTML=currentEnergy/amountEnergy
 }
 function enterEnergy4(){
     button2.style.backgroundColor='white',button3.style.backgroundColor='white',button1.style.backgroundColor='white',button5.style.backgroundColor='white'
     button4.style.backgroundColor='green'
     currentEnergy+=4
     amountEnergy+=1
-    console.log(currentEnergy)
-    console.log(amountEnergy)
+    energyOutput.innerHTML=currentEnergy/amountEnergy
 }
 function enterEnergy5(){
     button2.style.backgroundColor='white',button3.style.backgroundColor='white',button4.style.backgroundColor='white',button1.style.backgroundColor='white'
     button5.style.backgroundColor='green'
     currentEnergy+=5
     amountEnergy+=1
-    console.log(currentEnergy)
-    console.log(amountEnergy)
+    energyOutput.innerHTML=currentEnergy/amountEnergy
 }
     
