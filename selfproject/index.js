@@ -2,11 +2,14 @@
 
 let myHeight= document.getElementById('myHeight')
 let myWeight= document.getElementById('myWeight')
-const submitInfobtn= document.getElementById('submitInfo')
 let heightOutput=document.getElementById('heightOutput')
 let weightOutputo=document.getElementById('weightOutput')
 let myBMI=document.getElementById('bmiOutput')
 let bmi=0
+let meal=document.getElementById("Meal")
+//buttons
+const submitInfobtn= document.getElementById('submitInfo')
+const submitMealbtn= document.getElementById('submitMeal2')
 
 //updates the value of height and weight inputs into html
 //converts height and weight into integers
@@ -26,11 +29,20 @@ submitInfobtn.addEventListener("click",submitInfo)
 
 //box 3 .find() meal within database, else askes to add the meal / select energy level
 
+submitMealbtn.addEventListener("click",fetchData)
+
+function fetchData(){
 fetch("database.json")
 .then(res=>res.json())
-.then(data=>showInfo(data));
-
-function showInfo(data){
-    console.log(data);
+.then(data=>findData(data))
 }
+function findData(data){
+    let mealInput=meal.value
+    let dataArray=data
+    //const found = dataArray.food.find(x=>x.food=mealInput)
+    console.log(dataArray)
+    console.log(mealInput)
+}
+
+
 
