@@ -9,9 +9,16 @@ let bmi=0
 let meal=document.getElementById("Meal")
 let calorieOutput=document.getElementById("calorieOutput")
 let currentCalories=0
+let currentEnergy=0
+let amountEnergy=0
 //buttons
 const submitInfobtn= document.getElementById('submitInfo')
 const submitMealbtn= document.getElementById('submitMeal2')
+const button1=document.getElementById('button1')
+const button2=document.getElementById('button2')
+const button3=document.getElementById('button3')
+const button4=document.getElementById('button4')
+const button5=document.getElementById('button5')
 
 //updates the value of height and weight inputs into html
 //converts height and weight into integers
@@ -59,4 +66,52 @@ function findData(data){
 }
 }
 
+//click on energy levels
 
+button1.addEventListener("click",enterEnergy1)
+button2.addEventListener("click",enterEnergy2)
+button3.addEventListener("click",enterEnergy3)
+button4.addEventListener("click",enterEnergy4)
+button5.addEventListener("click",enterEnergy5)
+
+function enterEnergy1(){
+    button2.style.backgroundColor='white',button3.style.backgroundColor='white',button4.style.backgroundColor='white',button5.style.backgroundColor='white'
+    button1.style.backgroundColor='green'
+    currentEnergy+=1
+    amountEnergy+=1
+    console.log(currentEnergy)
+    console.log(amountEnergy)
+}
+function enterEnergy2(){
+    button1.style.backgroundColor='white',button3.style.backgroundColor='white',button4.style.backgroundColor='white',button5.style.backgroundColor='white'
+    button2.style.backgroundColor='green'
+    currentEnergy+=2
+    amountEnergy+=1
+    console.log(currentEnergy)
+    console.log(amountEnergy)
+}
+function enterEnergy3(){
+    button2.style.backgroundColor='white',button3.style.backgroundColor='white',button4.style.backgroundColor='white',button1.style.backgroundColor='white'
+    button3.style.backgroundColor='green'
+    currentEnergy+=3
+    amountEnergy+=1
+    console.log(currentEnergy)
+    console.log(amountEnergy)
+}
+function enterEnergy4(){
+    button2.style.backgroundColor='white',button3.style.backgroundColor='white',button1.style.backgroundColor='white',button5.style.backgroundColor='white'
+    button4.style.backgroundColor='green'
+    currentEnergy+=4
+    amountEnergy+=1
+    console.log(currentEnergy)
+    console.log(amountEnergy)
+}
+function enterEnergy5(){
+    button2.style.backgroundColor='white',button3.style.backgroundColor='white',button4.style.backgroundColor='white',button1.style.backgroundColor='white'
+    button5.style.backgroundColor='green'
+    currentEnergy+=5
+    amountEnergy+=1
+    console.log(currentEnergy)
+    console.log(amountEnergy)
+}
+    
