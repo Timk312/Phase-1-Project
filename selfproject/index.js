@@ -8,6 +8,7 @@ let myBMI=document.getElementById('bmiOutput')
 let bmi=0
 let meal=document.getElementById("Meal")
 let calorieOutput=document.getElementById("calorieOutput")
+let currentCalories=0
 //buttons
 const submitInfobtn= document.getElementById('submitInfo')
 const submitMealbtn= document.getElementById('submitMeal2')
@@ -51,9 +52,10 @@ function findData(data){
             return true
         }
     })
-    
+    //if inputed food matches database update the total calories
     if (found.food==mealInput){
-        console.log(found.calories)
+    currentCalories+=found.calories
+    calorieOutput.innerHTML=currentCalories
 }
 }
 
