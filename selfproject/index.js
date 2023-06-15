@@ -7,6 +7,7 @@ let weightOutputo=document.getElementById('weightOutput')
 let myBMI=document.getElementById('bmiOutput')
 let bmi=0
 let meal=document.getElementById("Meal")
+let calorieOutput=document.getElementById("calorieOutput")
 //buttons
 const submitInfobtn= document.getElementById('submitInfo')
 const submitMealbtn= document.getElementById('submitMeal2')
@@ -35,14 +36,25 @@ function fetchData(){
 fetch("database.json")
 .then(res=>res.json())
 .then(data=>findData(data))
-}
-function findData(data){
-    let mealInput=meal.value
-    let dataArray=data
-    //const found = dataArray.food.find(x=>x.food=mealInput)
-    console.log(dataArray)
-    console.log(mealInput)
+.catch(error=>alert('food not found, please enter manually'))
 }
 
+
+function findData(data){
+    //set inputed text and fetched data to variables
+    let mealInput=meal.value
+    let dataArray=data
+
+    //find the food item
+    let found = dataArray.find(x=>{
+        if(mealInput==x.food){   
+            return true
+        }
+    })
+    
+    if (found.food==mealInput){
+        console.log(found.calories)
+}
+}
 
 
