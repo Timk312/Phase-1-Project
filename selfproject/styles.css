@@ -126,13 +126,13 @@ top: 11.5em;
 }
 #leftKey{
     text-align: center;
+    background-color: green;
 
     height: 100px;
     width: 500px;
     padding: 20px;
     margin: 50px;
     border: 5px solid black;
-    background-color: rgb(223, 214, 214);
 
     position: relative;
     bottom:60em;
@@ -146,7 +146,6 @@ top: 11.5em;
     padding: 20px;
     margin: 50px;
     border: 5px solid black;
-    background-color: rgb(223, 214, 214);
 
     position: relative;
     bottom:60em;

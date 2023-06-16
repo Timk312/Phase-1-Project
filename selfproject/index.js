@@ -5,15 +5,16 @@ let myWeight= document.getElementById('myWeight')
 let heightOutput=document.getElementById('heightOutput')
 let weightOutputo=document.getElementById('weightOutput')
 let myBMI=document.getElementById('bmiOutput')
-let bmi=0
 let meal=document.getElementById("Meal")
 let calorieOutput=document.getElementById("calorieOutput")
 let energyOutput=document.getElementById("energyOutput")
 let goalOutput=document.getElementById("goalOutput")
+let bmi=0
 let currentCalories=0
 let currentEnergy=0
 let amountEnergy=0
 let calorieGoal=0
+let difficulty=1
 //buttons
 const submitInfobtn= document.getElementById('submitInfo')
 const submitMealbtn= document.getElementById('submitMeal2')
@@ -70,10 +71,21 @@ function findData(data){
     calorieOutput.innerHTML=currentCalories
     //if meal+=700 calorie goal / if snack+=350 calorie goal
     if(found.type=="meal"){
+        if (difficulty==1){
         calorieGoal+=700
+        }
+        else{
+        calorieGoal+=(700*.66)
+        }
     }
     else if(found.type=="snack"){
+        if (difficulty==1){
         calorieGoal+=350
+        }
+        else{
+        calorieGoal+=(350*.66)
+        }
+       
     }
     
     goalOutput.innerHTML=calorieGoal
@@ -127,6 +139,27 @@ function enterEnergy5(){
     energyOutput.innerHTML=currentEnergy/amountEnergy
 }
     
-leftKey.addEventListener("keydown",(e)=>{
-console.log(e)
+document.body.addEventListener('keydown', e=>{
+if(e.keyCode==37){
+    rightKey.style.backgroundColor='white'
+    leftKey.style.backgroundColor='green'
+    if(difficulty==2){
+        calorieGoal/=.66
+        goalOutput.innerHTML=calorieGoal
+        difficulty-=1
+    }
+}
+
+})
+document.body.addEventListener('keydown', e=>{
+    if(e.keyCode==39){
+    leftKey.style.backgroundColor='white'
+    rightKey.style.backgroundColor='green'
+    if(difficulty==1){
+        calorieGoal*=.66
+        goalOutput.innerHTML=calorieGoal
+        difficulty+=1
+    }
+}
+
 })
