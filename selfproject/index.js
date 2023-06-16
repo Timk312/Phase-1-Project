@@ -142,20 +142,17 @@ let newObject=    {
     "type": newType
 }
 console.log(newObject)
-}
 
-
-// fetch("database.json",{
-//     method: 'PUT',
-//     body: JSON.stringify(newObject)
-// })
+// fetch("database.json")
 // .then(res=>res.json())
 // .then(data=>addData(data))
+// .catch(error=>alert('could not add data correctly'))
 // }
 
 // function addData(){
-    
-// }
+// database.json.push(addData)
+}
+
 
 //click on energy levels
 
