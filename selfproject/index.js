@@ -71,18 +71,22 @@ function findData(data){
     calorieOutput.innerHTML=currentCalories
     //if meal+=700 calorie goal / if snack+=350 calorie goal
     if(found.type=="meal"){
+        //if relaxed diet , add 700 calories per meal
         if (difficulty==1){
         calorieGoal+=700
         }
         else{
+        //else strict diet
         calorieGoal+=(700*.66)
         }
     }
     else if(found.type=="snack"){
+        //if relaxed diet, add 350 calroies per snack
         if (difficulty==1){
         calorieGoal+=350
         }
         else{
+        //else strict diet
         calorieGoal+=(350*.66)
         }
        
