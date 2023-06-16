@@ -22,6 +22,8 @@ const button2=document.getElementById('button2')
 const button3=document.getElementById('button3')
 const button4=document.getElementById('button4')
 const button5=document.getElementById('button5')
+const leftKey=document.getElementById("leftKey")
+const rightKey=document.getElementById("rightKey")
 
 //updates the value of height and weight inputs into html
 //converts height and weight into integers
@@ -104,7 +106,7 @@ function enterEnergy2(){
     energyOutput.innerHTML=currentEnergy/amountEnergy
 }
 function enterEnergy3(){
-    button2.style.backgroundColor='white',button3.style.backgroundColor='white',button4.style.backgroundColor='white',button1.style.backgroundColor='white'
+    button2.style.backgroundColor='white',button1.style.backgroundColor='white',button4.style.backgroundColor='white',button5.style.backgroundColor='white'
     button3.style.backgroundColor='green'
     currentEnergy+=3
     amountEnergy+=1
@@ -125,3 +127,6 @@ function enterEnergy5(){
     energyOutput.innerHTML=currentEnergy/amountEnergy
 }
     
+leftKey.addEventListener("keydown",(e)=>{
+console.log(e)
+})

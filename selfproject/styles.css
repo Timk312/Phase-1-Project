@@ -124,7 +124,7 @@ top: 11.5em;
     top:11em;
  
 }
-#btn1{
+#leftKey{
     text-align: center;
 
     height: 100px;
@@ -138,7 +138,7 @@ top: 11.5em;
     bottom:60em;
     left:5em;
 }
-#btn2{
+#rightKey{
     text-align: center;
 
     height: 100px;
