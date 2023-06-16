@@ -142,7 +142,7 @@ function enterEnergy5(){
     amountEnergy+=1
     energyOutput.innerHTML=currentEnergy/amountEnergy
 }
-    
+//if left key arrow is pressed, change color and difficulty
 document.body.addEventListener('keydown', e=>{
 if(e.keyCode==37){
     rightKey.style.backgroundColor='white'
@@ -154,6 +154,7 @@ if(e.keyCode==37){
     }
 }
 
+//if right key arrow is pressed, highlight difficulty and change difficulty integer
 })
 document.body.addEventListener('keydown', e=>{
     if(e.keyCode==39){
