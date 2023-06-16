@@ -1,5 +1,4 @@
-//box 1 and 2 input height and weight and set that value to myHeight/myWeight variables / update bmi
-
+//element id selectors
 let myHeight= document.getElementById('myHeight')
 let myWeight= document.getElementById('myWeight')
 let heightOutput=document.getElementById('heightOutput')
@@ -9,6 +8,7 @@ let meal=document.getElementById("Meal")
 let calorieOutput=document.getElementById("calorieOutput")
 let energyOutput=document.getElementById("energyOutput")
 let goalOutput=document.getElementById("goalOutput")
+//integers
 let bmi=0
 let currentCalories=0
 let currentEnergy=0
@@ -26,15 +26,19 @@ const button5=document.getElementById('button5')
 const leftKey=document.getElementById("leftKey")
 const rightKey=document.getElementById("rightKey")
 
+//box 1 and 2 input height and weight and set that value to myHeight/myWeight variables / update bmi
 //updates the value of height and weight inputs into html
 //converts height and weight into integers
 //BMI=weight (lb) / [height (in)]2 x 703
 //updates BMI
 function submitInfo(){
+    //change display of height and weight by the value entered
     heightOutput.innerHTML=myHeight.value 
     weightOutput.innerHTML= myWeight.value
+    //change string to integer
     myHeight=parseInt(heightOutput.innerHTML)
     myWeight=parseInt(weightOutput.innerHTML)
+    //BMI formula / update BMI display
     let inches=myHeight*12
     bmi=(myWeight/(Math.pow(inches,2)))*703
     myBMI.innerHTML=bmi  
@@ -46,6 +50,7 @@ submitInfobtn.addEventListener("click",submitInfo)
 
 submitMealbtn.addEventListener("click",fetchData)
 
+//fetch data from json file then run findDate function / alert if not found
 function fetchData(){
 fetch("database.json")
 .then(res=>res.json())
@@ -142,7 +147,7 @@ function enterEnergy5(){
     amountEnergy+=1
     energyOutput.innerHTML=currentEnergy/amountEnergy
 }
-//if left key arrow is pressed, change color and difficulty
+//if left key arrow is pressed, highlight difficulty and change difficulty integer
 document.body.addEventListener('keydown', e=>{
 if(e.keyCode==37){
     rightKey.style.backgroundColor='white'
