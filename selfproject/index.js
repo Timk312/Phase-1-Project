@@ -8,6 +8,8 @@ let meal=document.getElementById("Meal")
 let calorieOutput=document.getElementById("calorieOutput")
 let energyOutput=document.getElementById("energyOutput")
 let goalOutput=document.getElementById("goalOutput")
+let inputMeal=document.getElementById("inputMeal")
+let inputCalories=document.getElementById("inputCalories")
 //integers
 let bmi=0
 let currentCalories=0
@@ -15,9 +17,13 @@ let currentEnergy=0
 let amountEnergy=0
 let calorieGoal=0
 let difficulty=1
+let type=0
 //buttons
 const submitInfobtn= document.getElementById('submitInfo')
 const submitMealbtn= document.getElementById('submitMeal2')
+const addToDataBasebtn=document.getElementById("submitMeal")
+const buttonMeal=document.getElementById("buttonMeal")
+const buttonSnack=document.getElementById("buttonSnack")
 const button1=document.getElementById('button1')
 const button2=document.getElementById('button2')
 const button3=document.getElementById('button3')
@@ -31,6 +37,9 @@ const rightKey=document.getElementById("rightKey")
 //converts height and weight into integers
 //BMI=weight (lb) / [height (in)]2 x 703
 //updates BMI
+
+//calls submitInfo() once Submit Info is clicked
+submitInfobtn.addEventListener("click",submitInfo)
 function submitInfo(){
     //change display of height and weight by the value entered
     heightOutput.innerHTML=myHeight.value 
@@ -43,21 +52,20 @@ function submitInfo(){
     bmi=(myWeight/(Math.pow(inches,2)))*703
     myBMI.innerHTML=bmi  
 }
-//calls submitInfo() once button is clicked
-submitInfobtn.addEventListener("click",submitInfo)
+
 
 //box 3 .find() meal within database, else askes to add the meal / select energy level
 
-submitMealbtn.addEventListener("click",fetchData)
+//calls fetchToFindData once Submit Meal is clicked
+submitMealbtn.addEventListener("click",fetchToFindData)
 
 //fetch data from json file then run findDate function / alert if not found
-function fetchData(){
+function fetchToFindData(){
 fetch("database.json")
 .then(res=>res.json())
 .then(data=>findData(data))
 .catch(error=>alert('food not found, please enter manually'))
 }
-
 
 function findData(data){
     //set inputed text and fetched data to variables
@@ -100,6 +108,41 @@ function findData(data){
     goalOutput.innerHTML=calorieGoal
 }
 }
+
+//meal snack buttons
+buttonMeal.addEventListener("click",()=>{
+    type=1
+})
+buttonSnack.addEventListener("click",()=>{
+    type=2
+})
+
+
+//calls fetchToAddData once Add to database is clicked
+// addToDataBasebtn.addEventListener("click",fetchToAddData)
+
+// function fetchToAddData(){
+// let newFood=inputMeal
+// let newCalories=inputCalories
+// let newType=
+// let newObject=    {
+//     "food": newFood,
+//     "calories": newCalories,
+//     "type": newType
+// }
+    
+
+// fetch("database.json",{
+//     method: 'PUT',
+//     body: JSON.stringify(newObject)
+// })
+// .then(res=>res.json())
+// .then(data=>addData(data))
+// }
+
+// function addData(){
+    
+// }
 
 //click on energy levels
 
