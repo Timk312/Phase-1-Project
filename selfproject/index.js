@@ -11,6 +11,7 @@ let goalOutput=document.getElementById("goalOutput")
 let inputMeal=document.getElementById("inputMeal")
 let inputCalories=document.getElementById("inputCalories")
 //integers
+let newType="none"
 let bmi=0
 let currentCalories=0
 let currentEnergy=0
@@ -111,26 +112,38 @@ function findData(data){
 
 //meal snack buttons
 buttonMeal.addEventListener("click",()=>{
+    buttonMeal.style.backgroundColor='green'
+    buttonSnack.style.backgroundColor='white'
     type=1
 })
 buttonSnack.addEventListener("click",()=>{
+    buttonSnack.style.backgroundColor='green'
+    buttonMeal.style.backgroundColor='white'
     type=2
 })
 
 
 //calls fetchToAddData once Add to database is clicked
-// addToDataBasebtn.addEventListener("click",fetchToAddData)
+addToDataBasebtn.addEventListener("click",fetchToAddData)
 
-// function fetchToAddData(){
-// let newFood=inputMeal
-// let newCalories=inputCalories
-// let newType=
-// let newObject=    {
-//     "food": newFood,
-//     "calories": newCalories,
-//     "type": newType
-// }
-    
+function fetchToAddData(){
+if(type==1){
+    newType="meal"
+}
+if(type==2){
+    newType="snack"
+}
+
+let newFood=inputMeal.value
+let newCalories=inputCalories.value
+let newObject=    {
+    "food": newFood,
+    "calories": newCalories,
+    "type": newType
+}
+console.log(newObject)
+}
+
 
 // fetch("database.json",{
 //     method: 'PUT',
