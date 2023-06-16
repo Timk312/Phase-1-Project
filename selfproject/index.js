@@ -9,9 +9,11 @@ let bmi=0
 let meal=document.getElementById("Meal")
 let calorieOutput=document.getElementById("calorieOutput")
 let energyOutput=document.getElementById("energyOutput")
+let goalOutput=document.getElementById("goalOutput")
 let currentCalories=0
 let currentEnergy=0
 let amountEnergy=0
+let calorieGoal=0
 //buttons
 const submitInfobtn= document.getElementById('submitInfo')
 const submitMealbtn= document.getElementById('submitMeal2')
@@ -60,10 +62,19 @@ function findData(data){
             return true
         }
     })
-    //if inputed food matches database update the total calories
+    //if inputed food matches database update the total calories and calorieGoal
     if (found.food==mealInput){
     currentCalories+=found.calories
     calorieOutput.innerHTML=currentCalories
+    //if meal+=700 calorie goal / if snack+=350 calorie goal
+    if(found.type=="meal"){
+        calorieGoal+=700
+    }
+    else if(found.type=="snack"){
+        calorieGoal+=350
+    }
+    
+    goalOutput.innerHTML=calorieGoal
 }
 }
 
