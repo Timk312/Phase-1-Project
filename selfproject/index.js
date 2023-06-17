@@ -11,6 +11,7 @@ let goalOutput=document.getElementById("goalOutput")
 let inputMeal=document.getElementById("inputMeal")
 let inputCalories=document.getElementById("inputCalories")
 let bmiBox=document.getElementById("box2")
+let summaryBox=document.getElementById("box4")
 //integers
 let newType="none"
 let bmi=0
@@ -137,17 +138,23 @@ function findData(){
     }
     
     goalOutput.innerHTML=calorieGoal
+    if(currentCalories<calorieGoal){
+        summaryBox.style.backgroundColor='lightgreen'
+    }
+    if(currentCalories>calorieGoal){
+        summaryBox.style.backgroundColor='red'
+    }
 }
 }
 
 //meal snack buttons
 buttonMeal.addEventListener("click",()=>{
-    buttonMeal.style.backgroundColor='lightpink'
+    buttonMeal.style.backgroundColor='lightgreen'
     buttonSnack.style.backgroundColor='white'
     type=1
 })
 buttonSnack.addEventListener("click",()=>{
-    buttonSnack.style.backgroundColor='lightpink'
+    buttonSnack.style.backgroundColor='lightgreen'
     buttonMeal.style.backgroundColor='white'
     type=2
 })
@@ -157,13 +164,13 @@ buttonSnack.addEventListener("click",()=>{
 addToDataBasebtn.addEventListener("click",fetchToAddData)
 
 function fetchToAddData(){
+//create new object
 if(type==1){
     newType="meal"
 }
 if(type==2){
     newType="snack"
 }
-
 let newFood=inputMeal.value
 let newCalories=parseInt(inputCalories.value)
 let newObject=    {
@@ -171,17 +178,8 @@ let newObject=    {
     "calories": newCalories,
     "type": newType
 }
+//add new object to array
 databaseArray.push(newObject)
-console.log(databaseArray)
-
-// fetch("database.json")
-// .then(res=>res.json())
-// .then(data=>addData(data))
-// .catch(error=>alert('could not add data correctly'))
-// }
-
-// function addData(){
-// database.json.push(addData)
 }
 
 
@@ -194,9 +192,9 @@ button4.addEventListener("click",enterEnergy4)
 button5.addEventListener("click",enterEnergy5)
 
 function enterEnergy1(){
-    //makes current selected = lightpink and others =white
+    //makes current selected = lightgreen and others =white
     button2.style.backgroundColor='white',button3.style.backgroundColor='white',button4.style.backgroundColor='white',button5.style.backgroundColor='white'
-    button1.style.backgroundColor='lightpink'
+    button1.style.backgroundColor='lightgreen'
     //adds selected energy level to currentEnergy / keeps count of how many times u pressed a button
     currentEnergy+=1
     amountEnergy+=1
@@ -205,28 +203,28 @@ function enterEnergy1(){
 }
 function enterEnergy2(){
     button1.style.backgroundColor='white',button3.style.backgroundColor='white',button4.style.backgroundColor='white',button5.style.backgroundColor='white'
-    button2.style.backgroundColor='lightpink'
+    button2.style.backgroundColor='lightgreen'
     currentEnergy+=2
     amountEnergy+=1
     energyOutput.innerHTML=currentEnergy/amountEnergy
 }
 function enterEnergy3(){
     button2.style.backgroundColor='white',button1.style.backgroundColor='white',button4.style.backgroundColor='white',button5.style.backgroundColor='white'
-    button3.style.backgroundColor='lightpink'
+    button3.style.backgroundColor='lightgreen'
     currentEnergy+=3
     amountEnergy+=1
     energyOutput.innerHTML=currentEnergy/amountEnergy
 }
 function enterEnergy4(){
     button2.style.backgroundColor='white',button3.style.backgroundColor='white',button1.style.backgroundColor='white',button5.style.backgroundColor='white'
-    button4.style.backgroundColor='lightpink'
+    button4.style.backgroundColor='lightgreen'
     currentEnergy+=4
     amountEnergy+=1
     energyOutput.innerHTML=currentEnergy/amountEnergy
 }
 function enterEnergy5(){
     button2.style.backgroundColor='white',button3.style.backgroundColor='white',button4.style.backgroundColor='white',button1.style.backgroundColor='white'
-    button5.style.backgroundColor='lightpink'
+    button5.style.backgroundColor='lightgreen'
     currentEnergy+=5
     amountEnergy+=1
     energyOutput.innerHTML=currentEnergy/amountEnergy
@@ -235,11 +233,17 @@ function enterEnergy5(){
 document.body.addEventListener('keydown', e=>{
 if(e.keyCode==37){
     rightKey.style.backgroundColor='white'
-    leftKey.style.backgroundColor='lightpink'
+    leftKey.style.backgroundColor='lightgreen'
     if(difficulty==2){
         calorieGoal/=.66
         goalOutput.innerHTML=calorieGoal
         difficulty-=1
+    }
+    if(currentCalories<calorieGoal){
+        summaryBox.style.backgroundColor='lightgreen'
+    }
+    if(currentCalories>calorieGoal){
+        summaryBox.style.backgroundColor='red'
     }
 }
 
@@ -248,11 +252,17 @@ if(e.keyCode==37){
 document.body.addEventListener('keydown', e=>{
     if(e.keyCode==39){
     leftKey.style.backgroundColor='white'
-    rightKey.style.backgroundColor='lightpink'
+    rightKey.style.backgroundColor='lightgreen'
     if(difficulty==1){
         calorieGoal*=.66
         goalOutput.innerHTML=calorieGoal
         difficulty+=1
+    }
+    if(currentCalories<calorieGoal){
+        summaryBox.style.backgroundColor='lightgreen'
+    }
+    if(currentCalories>calorieGoal){
+        summaryBox.style.backgroundColor='red'
     }
 }
 

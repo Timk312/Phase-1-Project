@@ -1,11 +1,11 @@
 [
     {
-        "food": "life-cereal",
+        "food": "life cereal",
         "calories": 300,
         "type": "meal"
     },
     {
-        "food": "eggsalad-sandwhich",
+        "food": "eggsalad sandwhich",
         "calories": 600,
         "type": "meal"
     },

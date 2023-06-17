@@ -5,10 +5,10 @@
 body{
 overflow-y: hidden;
 overflow-x: hidden;
-background-color:mediumpurple
+background-color:darkgrey;
 }
 header{
-    background-color:lightpink;
+    background-color:lightgreen;
 }
 #heightInfo{
 position: absolute;
@@ -109,7 +109,7 @@ top: 10.2em;
     padding: 20px;
     margin: 50px;
     border: 5px solid black;
-    background-color: lightskyblue;
+    background-color: lightslategray;
 
     position: relative;
     bottom:46.2em;
@@ -130,7 +130,7 @@ top: 10.2em;
 }
 #leftKey{
     text-align: center;
-    background-color:lightpink;
+    background-color:lightgreen;
 
     height: 100px;
     width: 500px;
