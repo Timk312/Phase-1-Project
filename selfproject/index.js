@@ -2,7 +2,7 @@
 let myHeight= document.getElementById('myHeight')
 let myWeight= document.getElementById('myWeight')
 let heightOutput=document.getElementById('heightOutput')
-let weightOutputo=document.getElementById('weightOutput')
+let weightOutput=document.getElementById('weightOutput')
 let myBMI=document.getElementById('bmiOutput')
 let meal=document.getElementById("Meal")
 let calorieOutput=document.getElementById("calorieOutput")
@@ -10,6 +10,7 @@ let energyOutput=document.getElementById("energyOutput")
 let goalOutput=document.getElementById("goalOutput")
 let inputMeal=document.getElementById("inputMeal")
 let inputCalories=document.getElementById("inputCalories")
+let bmiBox=document.getElementById("box2")
 //integers
 let newType="none"
 let bmi=0
@@ -61,6 +62,10 @@ function addArray(data){
 //calls submitInfo() once Submit Info is clicked
 submitInfobtn.addEventListener("click",submitInfo)
 function submitInfo(){
+    //reset info on new submit
+    bmi=0;
+    let myHeight= document.getElementById('myHeight')
+    let myWeight= document.getElementById('myWeight')
     //change display of height and weight by the value entered
     heightOutput.innerHTML=myHeight.value 
     weightOutput.innerHTML= myWeight.value
@@ -71,6 +76,12 @@ function submitInfo(){
     let inches=myHeight*12
     bmi=(myWeight/(Math.pow(inches,2)))*703
     myBMI.innerHTML=bmi  
+    if(bmi<30){
+    bmiBox.style.backgroundColor="lightgreen"
+    }
+    if(bmi>30){
+        bmiBox.style.backgroundColor="red"
+}
 }
 
 

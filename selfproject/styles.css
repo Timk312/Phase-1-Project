@@ -13,22 +13,22 @@ header{
 #heightInfo{
 position: absolute;
 left: 16em;
-top: 5.5em;
+top: 4.5em;
 }
 #heightOutput{
 position: absolute;
 left: 30em;
-top: 7.3em;
+top: 6.1em;
 }
 #weightOutput{
 position: absolute;
 left: 30em;
-top: 11.5em;
+top: 10.2em;
 }
 #weightInfo{
     position: absolute;
     left: 16em;
-    top: 8.7em;
+    top: 7.7em;
     }
 .button{
     height: 50px;
@@ -86,7 +86,7 @@ top: 11.5em;
     padding: 20px;
     margin: 50px;
     border: 5px solid black;
-    background-color: lightskyblue;
+    background-color:lightslategray;
 
     position: relative;
     bottom:12.5em;
