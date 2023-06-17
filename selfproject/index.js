@@ -279,8 +279,6 @@ document.body.addEventListener('keydown', e=>{
 
 //hides ad
 advertisement.style.display='none'
-//shows add
-//advertisement.style.display!='none'
 
 //enter a number from 1 to 1010 else alert pokemon not found
 let url=''
