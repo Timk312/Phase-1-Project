@@ -77,23 +77,23 @@ function submitInfo(){
 //box 3 .find() meal within database, else askes to add the meal / select energy level
 
 //calls fetchToFindData once Submit Meal is clicked
-submitMealbtn.addEventListener("click",fetchToFindData)
+submitMealbtn.addEventListener("click",fetchToCheckData)
 
-//fetch data from json file then run findDate function / alert if not found
-function fetchToFindData(){
+// fetch data from json file then run findDate function / alert if not found
+function fetchToCheckData(){
 fetch("database.json")
 .then(res=>res.json())
-.then(data=>findData(data))
+.then(data=>findData())
 .catch(error=>alert('food not found, please enter manually'))
 }
 
-function findData(data){
+function findData(){
     //set inputed text and fetched data to variables
     let mealInput=meal.value
-    let dataArray=data
+    // let dataArray=data
 
     //find the food item
-    let found = dataArray.find(x=>{
+    let found = databaseArray.find(x=>{
         if(mealInput==x.food){   
             return true
         }
@@ -154,7 +154,7 @@ if(type==2){
 }
 
 let newFood=inputMeal.value
-let newCalories=inputCalories.value
+let newCalories=parseInt(inputCalories.value)
 let newObject=    {
     "food": newFood,
     "calories": newCalories,
