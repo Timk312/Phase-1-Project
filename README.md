@@ -3,6 +3,8 @@
 https://github.com/Timk312/Phase-1-Project
 
 https://timk312.hashnode.dev/what-is-a-fetch-api-request
+
+https://youtu.be/pSVi6it7_t8
 ## How to use the application
 ### Finding BMI
 Filling out the Height and Weight forms will display that info as well as your BMI .
