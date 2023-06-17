@@ -1,7 +1,8 @@
 # Phase-1-Project
-My project repository for phase-1
-## My github for the project 
-Timk312/Phase-1-Project 
+## My github,blog,and video for the project 
+https://github.com/Timk312/Phase-1-Project
+
+https://timk312.hashnode.dev/what-is-a-fetch-api-request
 ## How to use the application
 ### Finding BMI
 Filling out the Height and Weight forms will display that info as well as your BMI .
