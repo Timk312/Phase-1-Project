@@ -71,7 +71,41 @@ top: 10.2em;
     margin: auto;
     text-align: center;
 }
-
+#ad{
+    position: absolute;
+    height: 55px;
+    width: 250px;
+    padding: 20px;
+    margin: 50px;
+    top: -3em;
+    left: -3em;
+    background-color: rgb(179, 19, 19);
+    border: 5px solid black;
+}
+#pokebox{
+    position: absolute;
+    top: -15px;
+    right:60px;
+}
+#advert{
+position: relative;
+text-align: center;
+left:30px;
+background-color: lightgray;
+}
+#pokemon{
+font-size: small;
+position: absolute;
+left:5px;
+top:65px;
+width: 80px;
+background-color: white;
+}
+#pokebtn{
+position: absolute;
+top:80px;
+left:100px;
+}
 #box {
     height: 100px;
     width: 1000px;

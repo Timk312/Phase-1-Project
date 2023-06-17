@@ -12,6 +12,8 @@ let inputMeal=document.getElementById("inputMeal")
 let inputCalories=document.getElementById("inputCalories")
 let bmiBox=document.getElementById("box2")
 let summaryBox=document.getElementById("box4")
+let pokemon=document.getElementById('pokeid')
+let whosThatPokemon=document.getElementById('pokemon')
 //integers
 let newType="none"
 let bmi=0
@@ -35,6 +37,7 @@ const button4=document.getElementById('button4')
 const button5=document.getElementById('button5')
 const leftKey=document.getElementById("leftKey")
 const rightKey=document.getElementById("rightKey")
+const pokebtn=document.getElementById("pokebtn")
 
 //on window load create a new array from the existing json file array
 window.onload=function(){
@@ -267,3 +270,20 @@ document.body.addEventListener('keydown', e=>{
 }
 
 })
+//added an advertisement that uses a pokedex api to check which pokemon matches the index
+//enter a number from 1 to 1010 else alert pokemon not found
+
+let url=''
+pokebtn.addEventListener("click",getPokemon)
+
+function getPokemon(){
+url='https://pokeapi.co/api/v2/pokemon/'+pokemon.value
+    fetch(url)
+    .then(res=>res.json())
+    .then(data=>whosThat(data))
+    .catch(error=>alert('Pokemon not found'))
+}
+
+function whosThat(data){
+whosThatPokemon.innerHTML=data.name.toUpperCase()
+}
