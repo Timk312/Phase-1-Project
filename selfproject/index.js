@@ -19,6 +19,7 @@ let amountEnergy=0
 let calorieGoal=0
 let difficulty=1
 let type=0
+let databaseArray=[]
 //buttons
 const submitInfobtn= document.getElementById('submitInfo')
 const submitMealbtn= document.getElementById('submitMeal2')
@@ -32,6 +33,24 @@ const button4=document.getElementById('button4')
 const button5=document.getElementById('button5')
 const leftKey=document.getElementById("leftKey")
 const rightKey=document.getElementById("rightKey")
+
+//on window load create a new array from the existing json file array
+window.onload=function(){
+    fetchToLoadArray()
+}
+
+function fetchToLoadArray(){
+fetch("database.json")
+.then(res=>res.json())
+.then(data=>addArray(data))
+.catch(error=>alert('array did not load'))
+}
+function addArray(data){
+    data.forEach((item)=>{
+    databaseArray.push(item)
+    })
+}
+
 
 //box 1 and 2 input height and weight and set that value to myHeight/myWeight variables / update bmi
 //updates the value of height and weight inputs into html
@@ -112,12 +131,12 @@ function findData(data){
 
 //meal snack buttons
 buttonMeal.addEventListener("click",()=>{
-    buttonMeal.style.backgroundColor='green'
+    buttonMeal.style.backgroundColor='lightpink'
     buttonSnack.style.backgroundColor='white'
     type=1
 })
 buttonSnack.addEventListener("click",()=>{
-    buttonSnack.style.backgroundColor='green'
+    buttonSnack.style.backgroundColor='lightpink'
     buttonMeal.style.backgroundColor='white'
     type=2
 })
@@ -141,7 +160,8 @@ let newObject=    {
     "calories": newCalories,
     "type": newType
 }
-console.log(newObject)
+databaseArray.push(newObject)
+console.log(databaseArray)
 
 // fetch("database.json")
 // .then(res=>res.json())
@@ -163,9 +183,9 @@ button4.addEventListener("click",enterEnergy4)
 button5.addEventListener("click",enterEnergy5)
 
 function enterEnergy1(){
-    //makes current selected = green and others =white
+    //makes current selected = lightpink and others =white
     button2.style.backgroundColor='white',button3.style.backgroundColor='white',button4.style.backgroundColor='white',button5.style.backgroundColor='white'
-    button1.style.backgroundColor='green'
+    button1.style.backgroundColor='lightpink'
     //adds selected energy level to currentEnergy / keeps count of how many times u pressed a button
     currentEnergy+=1
     amountEnergy+=1
@@ -174,28 +194,28 @@ function enterEnergy1(){
 }
 function enterEnergy2(){
     button1.style.backgroundColor='white',button3.style.backgroundColor='white',button4.style.backgroundColor='white',button5.style.backgroundColor='white'
-    button2.style.backgroundColor='green'
+    button2.style.backgroundColor='lightpink'
     currentEnergy+=2
     amountEnergy+=1
     energyOutput.innerHTML=currentEnergy/amountEnergy
 }
 function enterEnergy3(){
     button2.style.backgroundColor='white',button1.style.backgroundColor='white',button4.style.backgroundColor='white',button5.style.backgroundColor='white'
-    button3.style.backgroundColor='green'
+    button3.style.backgroundColor='lightpink'
     currentEnergy+=3
     amountEnergy+=1
     energyOutput.innerHTML=currentEnergy/amountEnergy
 }
 function enterEnergy4(){
     button2.style.backgroundColor='white',button3.style.backgroundColor='white',button1.style.backgroundColor='white',button5.style.backgroundColor='white'
-    button4.style.backgroundColor='green'
+    button4.style.backgroundColor='lightpink'
     currentEnergy+=4
     amountEnergy+=1
     energyOutput.innerHTML=currentEnergy/amountEnergy
 }
 function enterEnergy5(){
     button2.style.backgroundColor='white',button3.style.backgroundColor='white',button4.style.backgroundColor='white',button1.style.backgroundColor='white'
-    button5.style.backgroundColor='green'
+    button5.style.backgroundColor='lightpink'
     currentEnergy+=5
     amountEnergy+=1
     energyOutput.innerHTML=currentEnergy/amountEnergy
@@ -204,7 +224,7 @@ function enterEnergy5(){
 document.body.addEventListener('keydown', e=>{
 if(e.keyCode==37){
     rightKey.style.backgroundColor='white'
-    leftKey.style.backgroundColor='green'
+    leftKey.style.backgroundColor='lightpink'
     if(difficulty==2){
         calorieGoal/=.66
         goalOutput.innerHTML=calorieGoal
@@ -217,7 +237,7 @@ if(e.keyCode==37){
 document.body.addEventListener('keydown', e=>{
     if(e.keyCode==39){
     leftKey.style.backgroundColor='white'
-    rightKey.style.backgroundColor='green'
+    rightKey.style.backgroundColor='lightpink'
     if(difficulty==1){
         calorieGoal*=.66
         goalOutput.innerHTML=calorieGoal

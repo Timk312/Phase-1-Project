@@ -18,5 +18,10 @@
         "food": "buttered toast",
         "calories": 200,
         "type": "snack"
+    },
+    {
+        "food": "muffin",
+        "calories": 400,
+        "type": "snack"
     }
 ]
