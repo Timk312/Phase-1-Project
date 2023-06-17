@@ -14,6 +14,7 @@ let bmiBox=document.getElementById("box2")
 let summaryBox=document.getElementById("box4")
 let pokemon=document.getElementById('pokeid')
 let whosThatPokemon=document.getElementById('pokemon')
+let advertisement=document.getElementById('ad')
 //integers
 let newType="none"
 let bmi=0
@@ -270,9 +271,18 @@ document.body.addEventListener('keydown', e=>{
 }
 
 })
-//added an advertisement that uses a pokedex api to check which pokemon matches the index
-//enter a number from 1 to 1010 else alert pokemon not found
 
+
+
+
+//added an advertisement that uses a pokedex api to check which pokemon matches the index
+
+//hides ad
+advertisement.style.display='none'
+//shows add
+//advertisement.style.display!='none'
+
+//enter a number from 1 to 1010 else alert pokemon not found
 let url=''
 pokebtn.addEventListener("click",getPokemon)
 
